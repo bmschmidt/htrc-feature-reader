@@ -48,7 +48,7 @@ def download_file(htids, outdir='./', keep_dirs=False, silent=True):
     
     # Support older Python, currently without error catching yet
     major, minor = sys.version_info[:2]
-    if major <= 3 and minor < 5:
+    if (major *10 + minor) < 35:
         out = (subprocess.call(cmd), None)
     else:
         if not silent:
